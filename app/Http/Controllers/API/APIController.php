@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\News;
 use App\Models\OCSubscription;
 use App\Models\User;
+use App\Mail\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;

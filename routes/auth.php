@@ -1,19 +1,23 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| O&C Auth Routes
-|--------------------------------------------------------------------------
-*/
+Route::get('/créer-son-compte', [RegisteredUserController::class, 'create'])
+                ->middleware('guest')
+                ->name('register');
 
-Route::post('/auth/login', 'App\Http\Controllers\AuthController@login')->name('login');
+Route::post('/créer-son-compte', [RegisteredUserController::class, 'store'])
+                ->middleware('guest');
 
-Route::post('/auth/register', 'App\Http\Controllers\AuthController@register');
+Route::get('/se-connecter', [AuthenticatedSessionController::class, 'create'])
+                ->middleware('guest')
+                ->name('login');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
-	
-	Route::post('/auth/logout', 'App\Http\Controllers\AuthController@logout');
-});
+Route::post('/se-connecter', [AuthenticatedSessionController::class, 'store'])
+                ->middleware('guest');
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->middleware('auth')
+                ->name('logout');

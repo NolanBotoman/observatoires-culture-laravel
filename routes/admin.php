@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::middleware('auth:sanctum')->any('/administration/*', function (Request $request) {
+Route::middleware('auth')->any('/administration/*', function (Request $request) {
     if (!$request->user()->isAdmin) {
         return redirect()->route('home');   
     }

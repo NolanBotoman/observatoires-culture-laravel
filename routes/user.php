@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+Route::middleware(['auth'])->group(function() {
 
 	Route::get('/mon-compte', 'App\Http\Controllers\UserController@displayAccount');
 	Route::get('/mon-compte/abonnements', 'App\Http\Controllers\UserController@displaySubscriptions');

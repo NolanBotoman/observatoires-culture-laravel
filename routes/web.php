@@ -17,7 +17,8 @@ Route::get('/actualités/{?article}', 'App\Http\Controllers\PublicController@dis
 
 Route::get('/abonnements/{?subscription}', 'App\Http\Controllers\PublicController@displaySubscriptions');
 
-require __DIR__.'/contact.php';
+Route::get('/nous-contacter', 'App\Http\Controllers\PublicController@displayContact');
+Route::post('/nous-contacte', 'App\Http\Controllers\PublicController@postContact');
 
 require __DIR__.'/user.php';
 
@@ -27,4 +28,3 @@ require __DIR__.'/auth.php';
 Route::fallback(function () {
     return route('home');
 });
-
