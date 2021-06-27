@@ -10,6 +10,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function() {
 
-	Route::get('/mon-compte', 'App\Http\Controllers\UserController@displayAccount');
-	Route::get('/mon-compte/abonnements', 'App\Http\Controllers\UserController@displaySubscriptions');
+	Route::get('/mon-compte', 'App\Http\Controllers\UserController@displayAccount')->name('account');
+	Route::post('/mon-compte', 'App\Http\Controllers\UserController@updateAccount');
 });

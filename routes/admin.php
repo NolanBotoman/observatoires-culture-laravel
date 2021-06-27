@@ -17,10 +17,10 @@ Route::middleware('auth')->any('/administration/*', function (Request $request) 
     Route::get('/administration', 'App\Http\Controllers\AdminController@displayDashboard');
 
     Route::get('/administration/utilisateurs/', 'App\Http\Controllers\AdminController@displayUsers');
-    Route::any('/administration/utilisateurs/{id}/{?action}', 'App\Http\Controllers\AdminController@manageUser');
+    Route::any('/administration/utilisateurs/{id}', 'App\Http\Controllers\AdminController@manageUser');
 
     Route::get('/administration/actualités/', 'App\Http\Controllers\AdminController@displayNews');
-    Route::any('/administration/actualités/{id}/{?action}', 'App\Http\Controllers\AdminController@manageArticle');
+    Route::any('/administration/actualités/{id}', 'App\Http\Controllers\AdminController@manageArticle');
 
     Route::get('/administration/abonnements/', 'App\Http\Controllers\AdminController@displaySubscriptions');
 });
