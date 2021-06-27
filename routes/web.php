@@ -18,7 +18,7 @@ Route::get('/actualités/{?article}', 'App\Http\Controllers\PublicController@dis
 Route::get('/abonnements/{?subscription}', 'App\Http\Controllers\PublicController@displaySubscriptions');
 
 Route::get('/nous-contacter', 'App\Http\Controllers\PublicController@displayContact');
-Route::post('/nous-contacte', 'App\Http\Controllers\PublicController@postContact');
+Route::post('/nous-contacter', 'App\Http\Controllers\PublicController@postContact');
 
 require __DIR__.'/user.php';
 
