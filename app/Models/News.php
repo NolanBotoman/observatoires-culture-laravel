@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
 
-    protected $
+    protected $imagePath = "/img/news/";
 
     protected $fillable = [
         'title',
@@ -18,7 +18,7 @@ class News extends Model
 
     public function image()
     {
-        return 
+        return $this->imagePath . $this->id . ".jpg";
     }
 
     public function user()

@@ -13,7 +13,8 @@ class PublicController extends Controller
 {
     public function displayDefault() {
         return view("home", [
-            "news" => News::latest()->take(3)->get()
+            "page" => "Observatoires & Culture",
+            "news" => News::latest()->take(3)->get(),
         ]);
     }
 
@@ -25,7 +26,7 @@ class PublicController extends Controller
         $article = News::find($article);
         
         return ($article == null) 
-            ? view("news", ["news" => News::all()->orderBy('id', 'desc')]); 
+            ? view("news", ["news" => News::all()->orderBy('id', 'desc')])
             : view("article", ["news" => $article]);
     }
 
@@ -33,7 +34,7 @@ class PublicController extends Controller
         $subscription = OCSubscription::find($subscription);
 
         return ($subscription == null) 
-            ? view("plans", ["plans" => OCSubscription::all()]); 
+            ? view("plans", ["plans" => OCSubscription::all()])
             : view("subscription", ["subscription" => $subscription]);
     }
 

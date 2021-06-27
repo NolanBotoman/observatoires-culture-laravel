@@ -4,11 +4,11 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/créer-son-compte', [RegisteredUserController::class, 'create'])
+Route::get('/créer-un-compte', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
 
-Route::post('/créer-son-compte', [RegisteredUserController::class, 'store'])
+Route::post('/créer-un-compte', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
 
 Route::get('/se-connecter', [AuthenticatedSessionController::class, 'create'])
@@ -18,6 +18,6 @@ Route::get('/se-connecter', [AuthenticatedSessionController::class, 'create'])
 Route::post('/se-connecter', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+Route::post('/se-déconnecter', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
