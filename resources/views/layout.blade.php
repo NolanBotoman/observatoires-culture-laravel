@@ -9,22 +9,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
     @yield ('head')
 </head>
-<body class="container @yield('bodyClass')">
-	<nav class="d-flex">
+<body class="oc-container @yield('bodyClass')">
+	<nav>
         <input class="d-none" type="checkbox" id="sidebar" name="sidebar" onclick="lockScroll();">
-        <div class="w-100 d-flex flex-row justify-content-between">
-            <div>
-                <i class="oc"></i>
-                <h3><a class="text-uppercase oc-responsive-title" href="/"></a></h3>
+        <div class="oc-nav d-flex">
+            <div class="w-100 d-flex flex-row justify-content-between">
+                <div>
+                    <i class="oc"></i>
+                    <h3><a class="text-uppercase oc-responsive-title" href="/"></a></h3>
+                </div>
+                <div class="d-flex">
+                    <h3><a class="text-uppercase" href="/qui-sommes-nous">Qui sommes-nous ?</a></h3>
+                    <h3><a class="text-uppercase" href="/nos-actualités">Nos actualités</a></h3>
+                    <h3><a class="text-uppercase" href="/abonnements">Abonnements</a></h3>
+                    <label for="search"><i class="search"></i></label>
+                    <label for="sidebar"><i class="bars">a</i></label>
+                </div>
             </div>
-            <div class="d-flex">
-                <h3><a class="text-uppercase" href="/qui-sommes-nous">Qui sommes-nous ?</a></h3>
-                <h3><a class="text-uppercase" href="/nos-actualités">Nos actualités</a></h3>
-                <h3><a class="text-uppercase" href="/abonnements">Abonnements</a></h3>
-                <label for="search"><i class="search"></i></label>
-                <label for="sidebar"><i class="bars">a</i></label>
-            </div>
-        </div>
         </div>
         <div class="sidebar">
             <div class="row">
@@ -53,9 +54,9 @@
     <main>
 	   @yield ('content')
     </main>
-	<div class="footer">
+	<div class="oc-footer d-flex justify-content-between align-items-center">
         <span class="oc-footer-title">www.observatoires-culture.fr © 2021</span>
-        <h6><a href="">Conditions générales de vente</a> - <a href="">Mentions légales</a></h6>
+        <h6 class="oc-light"><a href="">Conditions générales de vente</a> - <a href="">Mentions légales</a></h6>
 	</div>
 </body>
 </html>

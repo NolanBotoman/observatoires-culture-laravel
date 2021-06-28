@@ -1,15 +1,95 @@
+@font-face {
+    font-family: 'OC Light';
+    font-weight: normal;
+    src: url('Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OC Medium';
+    font-weight: normal;
+    src: url('Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OC Bold';
+    font-weight: normal;
+    src: url('Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OC ExtraBold';
+    font-weight: normal;
+    src: url('Montserrat-ExtraBold.ttf') format('truetype'); 
+}
+
 html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "OC ExtraBold", sans-serif;
+    background-color: #EB6054;
+    color: white;
 }
 
 main {
     flex: 1 1 auto;
 }
 
+h1, .h1 { font-size: 40px; margin-bottom: 0 }
+h2, .h2 { font-size: 30px; margin-bottom: 0 }
+h3, .h3 { font-size: 25px; margin-bottom: 0 }
+h4, .h4 { font-size: 20px; margin-bottom: 0 }
+h5, .h5 { font-size: 18px; margin-bottom: 0 }
+h6, .h6 { font-size: 16px; margin-bottom: 0 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #EBEBEB;
+}
+
+.oc-container {
+    width: 100%;
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 960px) {
+    .oc-container {
+        max-width: 100%;
+    }
+}
+
+.oc-nav {
+    padding: 35px 0px;
+}
+
+.oc-footer {
+    padding: 20px 0px;
+}
+
 .oc-responsive-title:before {
     content: "Observatoires & Culture";
+}
+
+.oc-footer-title {
+    font-size: 22px;
+}
+
+.oc-light {
+    font-family: "OC Light", sans-serif;
+}
+
+.oc-medium {
+    font-family: "OC Medium", sans-serif;
+}
+
+.oc-bold {
+    font-family: "OC Bold", sans-serif;
 }
 
 @media (max-width: 960px) {
@@ -18,17 +98,23 @@ main {
     }
 }
 
+.oc-nav h3, .oc-nav .h3, .sidebar h3, .sidebar .h3 {
+    font-size: 22px;
+}
+
 .sidebar {
     position: fixed;
     right: 0;
+    top: 0;
     z-index: 10;
     background-color: #EBEBEB;
     transform: translate3d(100%, 0, 0);
     box-sizing: border-box;
     transition: transform .4s cubic-bezier(.25, .1, .25, 1);
     height: 100%;
+    padding: 0px 100px;
 }
 
-nav #sidebar:checked ~ .sidebar {
+#sidebar:checked ~ .sidebar {
     transform: translate3d(0, 0, 0);
 }
