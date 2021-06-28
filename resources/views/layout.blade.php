@@ -18,12 +18,12 @@
                     <i class="oc"></i>
                     <h3><a class="text-uppercase oc-responsive-title" href="/"></a></h3>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex align-items-center gap-4">
                     <h3><a class="text-uppercase" href="/qui-sommes-nous">Qui sommes-nous ?</a></h3>
                     <h3><a class="text-uppercase" href="/nos-actualités">Nos actualités</a></h3>
                     <h3><a class="text-uppercase" href="/abonnements">Abonnements</a></h3>
-                    <label for="search"><i class="search"></i></label>
-                    <label for="sidebar"><i class="bars">a</i></label>
+                    <label for="search"><i class="search white"></i></label>
+                    <label for="sidebar"><i class="bars white">a</i></label>
                 </div>
             </div>
         </div>

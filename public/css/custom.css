@@ -22,6 +22,11 @@
     src: url('Montserrat-ExtraBold.ttf') format('truetype'); 
 }
 
+i.bars { content:url("../img/bars.svg"); height: 35px; }
+i.search { content:url("../img/search.svg"); height: 35px }
+
+i.white { filter: invert(99%) sepia(3%) saturate(1231%) hue-rotate(165deg) brightness(119%) contrast(100%); }
+
 html, body {
     min-height: 100vh;
     display: flex;
@@ -103,6 +108,7 @@ a:hover {
 }
 
 .sidebar {
+    color: black;
     position: fixed;
     right: 0;
     top: 0;
@@ -117,4 +123,9 @@ a:hover {
 
 #sidebar:checked ~ .sidebar {
     transform: translate3d(0, 0, 0);
+}
+
+.sidebar a:hover {
+    color: inherit;
+    text-decoration: underline;
 }
