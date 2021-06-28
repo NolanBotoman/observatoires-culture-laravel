@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $page }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
     @yield ('head')
 </head>
-<body class="@yield('bodyClass')">
+<body class="container @yield('bodyClass')">
 	<nav class="d-flex">
-        <input class="d-hidden" type="checkbox" id="sidebar" name="sidebar" onclick="lockScroll();">
-        <div class="oc-nav d-flex flex-row justify-content-between">
+        <input class="d-none" type="checkbox" id="sidebar" name="sidebar" onclick="lockScroll();">
+        <div class="w-100 d-flex flex-row justify-content-between">
             <div>
                 <i class="oc"></i>
                 <h3><a class="text-uppercase oc-responsive-title" href="/"></a></h3>
             </div>
-            <div class="nav-content">
+            <div class="d-flex">
                 <h3><a class="text-uppercase" href="/qui-sommes-nous">Qui sommes-nous ?</a></h3>
                 <h3><a class="text-uppercase" href="/nos-actualités">Nos actualités</a></h3>
                 <h3><a class="text-uppercase" href="/abonnements">Abonnements</a></h3>
                 <label for="search"><i class="search"></i></label>
-                <label for="sidebar"><i class="bars"></i></label>
+                <label for="sidebar"><i class="bars">a</i></label>
             </div>
         </div>
         </div>
-        <div class="oc-sidebar">
+        <div class="sidebar">
             <div class="row">
+                <label for="sidebar"><i class="bars">a</i></label>
             </div> 
             <div class="row d-flex justify-content-between align-items-center">
                 <div>
@@ -49,7 +50,9 @@
             </div> 
         </div>
     </nav>
-	@yield ('content')
+    <main>
+	   @yield ('content')
+    </main>
 	<div class="footer">
         <span class="oc-footer-title">www.observatoires-culture.fr © 2021</span>
         <h6><a href="">Conditions générales de vente</a> - <a href="">Mentions légales</a></h6>
