@@ -14,7 +14,7 @@
         <input class="d-none" type="checkbox" id="sidebar" name="sidebar" onclick="lockScroll();">
         <div class="oc-nav d-flex">
             <div class="w-100 d-flex flex-row justify-content-between">
-                <div>
+                <div class="d-flex align-items-center gap-2">
                     <i class="oc"></i>
                     <h3><a class="text-uppercase oc-responsive-title" href="/"></a></h3>
                 </div>
@@ -27,13 +27,15 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar">
-            <div class="row">
+        <div class="sidebar d-flex flex-column flex-wrap">
+            <div class="d-flex gap-4 align-items-center mb-5">
+                <input class="searchbar w-100" placeholder="Rechercher une actualité"></input>
+                <i class="search"></i>
                 <label for="sidebar"><i class="bars">a</i></label>
             </div> 
-            <div class="row d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center oc-gap-large mt-5">
                 <div>
-                    <div class="mb-2">
+                    <div class="mb-5">
                         <h2><a class="text-uppercase" href="/qui-sommes-nous">Qui sommes-nous ?</a></h2>
                         <h2><a class="text-uppercase" href="/nos-actualités">Nos actualités</a></h2>
                         <h2><a class="text-uppercase" href="/abonnements">Abonnements</a></h2>
@@ -47,14 +49,14 @@
                     <h2><a class="text-uppercase" href="/se-déconnecter">Se déconnecter</a></h2>
                 @endif
                 </div>
-                <i class="books"></i>
+                <i class="large-books"></i>
             </div> 
         </div>
     </nav>
     <main>
 	   @yield ('content')
     </main>
-	<div class="oc-footer d-flex justify-content-between align-items-center">
+	<div class="oc-footer d-flex justify-content-between align-items-center flex-wrap">
         <span class="oc-footer-title">www.observatoires-culture.fr © 2021</span>
         <h6 class="oc-light"><a href="">Conditions générales de vente</a> - <a href="">Mentions légales</a></h6>
 	</div>

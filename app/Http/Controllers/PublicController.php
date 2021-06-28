@@ -19,19 +19,42 @@ class PublicController extends Controller
     }
 
     public function displayAbout() {
-        return view("about");
+        return view("about", [
+            "page" => "Observatoires & Culture - Qui sommes-nous ?",
+        ]);
     }
 
     public function displayNews($article = null) {
         $article = News::find($article);
         
-        return ($article == null) 
-            ? view("news", ["news" => News::all()->orderBy('id', 'desc')])
-            : view("article", ["news" => $article]);
+        if ($article == null) {
+            return view("news", [
+                "page" => "Observatoires & Culture - Nos actualités",
+                "news" => News::all()->sortByDesc("id")
+            ]);
+        } else {
+            return view("article", [
+                "page" => "Observatoires & Culture - " . $article->title,
+                "news" => $article
+            ]);
+        }
     }
 
     public function displaySubscriptions($subscription = null) {
         $subscription = OCSubscription::find($subscription);
+
+        if ($subscription == null) {
+            return view("plans", [
+                "page" => "Observatoires & Culture - Nos abonnements",
+                "plans" => OCSubscription::all()
+            ]);
+        } else {
+            return view("subscription", [
+                "page" => "Observatoires & Culture - " . $subscription->name,
+                "news" => $subscription
+            ]);
+        }
+          
 
         return ($subscription == null) 
             ? view("plans", ["plans" => OCSubscription::all()])

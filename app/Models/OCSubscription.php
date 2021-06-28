@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class OCSubscription extends Model
 {
+    protected $table = 'ocsubscriptions';
+
     public function user()
     {
         return $this->belongsTo(User::class);
